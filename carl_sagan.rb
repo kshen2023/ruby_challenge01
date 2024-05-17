@@ -1,8 +1,4 @@
-# Using a single puts statement build the following
-# sentence using only data from the carl hash and the
-# sagan array along with some string interpolation.
-#
-# We are a way for the cosmos to know itself.
+# 1
 
 carl  = {
           :toast => 'cosmos',
@@ -17,7 +13,7 @@ sagan = [
           { 2 => ['to']}
         ]
 
-        puts "#{carl[:words][2]} #{sagan[0][:are]} #{sagan[0]['A']} #{sagan[1]['waaaaaay']} #{carl[:words][1]} #{sagan[1][:th3]} #{carl[:toast]} #{sagan[3][2][0]} #{carl[:words][0]} #{sagan[2]}"
+        puts "#{carl[:words][2].capitalize} #{sagan[0][:are]} #{sagan[0]['A']} #{sagan[1]['waaaaaay']} #{carl[:words][1]} #{sagan[1][:th3]} #{carl[:toast]} #{sagan[3][2][0]} #{carl[:words][0]} #{sagan[2]}#{carl[:punctuation][1]}"
 
 # 2
 
@@ -58,9 +54,7 @@ require 'net/http'
 require 'json'
 
 url = 'https://data.winnipeg.ca/resource/d3jk-hb6j.json?$limit=306000'
-#uri = URI(url)
-#response = Net::HTTP.get(uri)
-#tree_data = JSON.parse(response)
+
 
 def get_tree_data(url)
   uri = URI(url)
@@ -83,8 +77,6 @@ def count_ash_trees(tree_data)
   ash_tree_count
 
 end
-
-url = 'https://data.winnipeg.ca/resource/d3jk-hb6j.json?$limit=306000'
 
 #Retrieve tree data from the subset URL
 tree_data = get_tree_data(url)
